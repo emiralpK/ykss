@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YKS Puan ve Sıralama Hesaplama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="diploma-notu">
+                <label for="diplomaNotu">Diploma Notu (0-100):</label>
+                <input type="number" id="diplomaNotu" min="0" max="100">
+            </div>
+            <div class="gecen-sene">
+                <label for="gecenSene">Geçen sene bir üniversiteye yerleştim:</label>
+                <input type="checkbox" id="gecenSene">
+            </div>
+            <div class="puan-turu">
+                <label for="puanTuru">Puan Türü:</label>
+                <select id="puanTuru">
+                    <option value="SAY">Sayısal</option>
+                    <option value="EA">Eşit Ağırlık</option>
+                    <option value="SOZ">Sözel</option>
+                    <option value="DIL">Dil</option>
+                </select>
+            </div>
+        </div>
+
+        <h2>TYT Puan ve Sıralama Hesaplama</h2>
+        <table class="tyt-table">
+            <tr>
+                <th>Türkçe(40)</th>
+                <th>Sosyal(20)</th>
+                <th>Matematik(40)</th>
+                <th>Fen(20)</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="tytTurkce" min="0" max="40"></td>
+                <td><input type="number" id="tytSosyal" min="0" max="20"></td>
+                <td><input type="number" id="tytMatematik" min="0" max="40"></td>
+                <td><input type="number" id="tytFen" min="0" max="20"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="tytTurkceYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="tytSosyalYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="tytMatematikYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="tytFenYanlis" placeholder="Yanlış"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="tytTurkceNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="tytSosyalNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="tytMatematikNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="tytFenNet" placeholder="Net" readonly></td>
+            </tr>
+        </table>
+
+        <div class="tyt-puanlar">
+            <div>
+                <h3>TYT PUANLAR</h3>
+                <table>
+                    <tr>
+                        <th>TYT</th>
+                        <th>HAM</th>
+                        <th>YER</th>
+                    </tr>
+                    <tr>
+                        <td>PUAN</td>
+                        <td><input type="number" id="tytHamPuan" readonly></td>
+                        <td><input type="number" id="tytYerPuan" readonly></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3>TYT SIRALAMALAR</h3>
+                <table>
+                    <tr>
+                        <th>TYT</th>
+                        <th>2023</th>
+                        <th>2022</th>
+                        <th>2021</th>
+                        <th>2020</th>
+                    </tr>
+                    <tr>
+                        <td>HAM</td>
+                        <td><input type="number" id="tytHamSiralama2023" readonly></td>
+                        <td><input type="number" id="tytHamSiralama2022" readonly></td>
+                        <td><input type="number" id="tytHamSiralama2021" readonly></td>
+                        <td><input type="number" id="tytHamSiralama2020" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>YER</td>
+                        <td><input type="number" id="tytYerSiralama2023" readonly></td>
+                        <td><input type="number" id="tytYerSiralama2022" readonly></td>
+                        <td><input type="number" id="tytYerSiralama2021" readonly></td>
+                        <td><input type="number" id="tytYerSiralama2020" readonly></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>AYT Puan ve Sıralama Hesaplama</h2>
+        <table class="ayt-table">
+            <tr>
+                <th>MAT(40)</th>
+                <th>FİZ(14)</th>
+                <th>KİM(13)</th>
+                <th>BİY(13)</th>
+                <th>EDG(24)</th>
+                <th>TAR-1(10)</th>
+                <th>COĞ-1(6)</th>
+                <th>TAR-2(11)</th>
+                <th>COĞ-2(11)</th>
+                <th>FEL(12)</th>
+                <th>DİL(80)</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="mat" min="0" max="40"></td>
+                <td><input type="number" id="fiz" min="0" max="14"></td>
+                <td><input type="number" id="kim" min="0" max="13"></td>
+                <td><input type="number" id="biy" min="0" max="13"></td>
+                <td><input type="number" id="edg" min="0" max="24"></td>
+                <td><input type="number" id="tar1" min="0" max="10"></td>
+                <td><input type="number" id="cog1" min="0" max="6"></td>
+                <td><input type="number" id="tar2" min="0" max="11"></td>
+                <td><input type="number" id="cog2" min="0" max="11"></td>
+                <td><input type="number" id="fel" min="0" max="12"></td>
+                <td><input type="number" id="dil" min="0" max="80"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="matYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="fizYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="kimYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="biyYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="edgYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="tar1Yanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="cog1Yanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="tar2Yanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="cog2Yanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="felYanlis" placeholder="Yanlış"></td>
+                <td><input type="number" id="dilYanlis" placeholder="Yanlış"></td>
+            </tr>
+            <tr>
+                <td><input type="number" id="matNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="fizNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="kimNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="biyNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="edgNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="tar1Net" placeholder="Net" readonly></td>
+                <td><input type="number" id="cog1Net" placeholder="Net" readonly></td>
+                <td><input type="number" id="tar2Net" placeholder="Net" readonly></td>
+                <td><input type="number" id="cog2Net" placeholder="Net" readonly></td>
+                <td><input type="number" id="felNet" placeholder="Net" readonly></td>
+                <td><input type="number" id="dilNet" placeholder="Net" readonly></td>
+            </tr>
+        </table>
+
+        <div class="ayt-puanlar">
+            <div>
+                <h3>AYT PUANLAR</h3>
+                <table>
+                    <tr>
+                        <th>YKS</th>
+                        <th>SAY</th>
+                        <th>EA</th>
+                        <th>SÖZ</th>
+                        <th>DİL</th>
+                    </tr>
+                    <tr>
+                        <td>HAM</td>
+                        <td><input type="number" id="sayHamPuan" readonly></td>
+                        <td><input type="number" id="eaHamPuan" readonly></td>
+                        <td><input type="number" id="sozHamPuan" readonly></td>
+                        <td><input type="number" id="dilHamPuan" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>YER</td>
+                        <td><input type="number" id="sayYerPuan" readonly></td>
+                        <td><input type="number" id="eaYerPuan" readonly></td>
+                        <td><input type="number" id="sozYerPuan" readonly></td>
+                        <td><input type="number" id="dilYerPuan" readonly></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <h3>AYT SIRALAMALAR</h3>
+                <table>
+                    <tr>
+                        <th>YKS</th>
+                        <th colspan="2">SAY</th>
+                        <th colspan="2">EA</th>
+                        <th colspan="2">SÖZ</th>
+                        <th colspan="2">DİL</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>HAM</th>
+                        <th>YER</th>
+                        <th>HAM</th>
+                        <th>YER</th>
+                        <th>HAM</th>
+                        <th>YER</th>
+                        <th>HAM</th>
+                        <th>YER</th>
+                    </tr>
+                    <tr>
+                        <td>2023</td>
+                        <td><input type="number" id="sayHamSiralama2023" readonly></td>
+                        <td><input type="number" id="sayYerSiralama2023" readonly></td>
+                        <td><input type="number" id="eaHamSiralama2023" readonly></td>
+                        <td><input type="number" id="eaYerSiralama2023" readonly></td>
+                        <td><input type="number" id="sozHamSiralama2023" readonly></td>
+                        <td><input type="number" id="sozYerSiralama2023" readonly></td>
+                        <td><input type="number" id="dilHamSiralama2023" readonly></td>
+                        <td><input type="number" id="dilYerSiralama2023" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>2022</td>
+                        <td><input type="number" id="sayHamSiralama2022" readonly></td>
+                        <td><input type="number" id="sayYerSiralama2022" readonly></td>
+                        <td><input type="number" id="eaHamSiralama2022" readonly></td>
+                        <td><input type="number" id="eaYerSiralama2022" readonly></td>
+                        <td><input type="number" id="sozHamSiralama2022" readonly></td>
+                        <td><input type="number" id="sozYerSiralama2022" readonly></td>
+                        <td><input type="number" id="dilHamSiralama2022" readonly></td>
+                        <td><input type="number" id="dilYerSiralama2022" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>2021</td>
+                        <td><input type="number" id="sayHamSiralama2021" readonly></td>
+                        <td><input type="number" id="sayYerSiralama2021" readonly></td>
+                        <td><input type="number" id="eaHamSiralama2021" readonly></td>
+                        <td><input type="number" id="eaYerSiralama2021" readonly></td>
+                        <td><input type="number" id="sozHamSiralama2021" readonly></td>
+                        <td><input type="number" id="sozYerSiralama2021" readonly></td>
+                        <td><input type="number" id="dilHamSiralama2021" readonly></td>
+                        <td><input type="number" id="dilYerSiralama2021" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>2020</td>
+                        <td><input type="number" id="sayHamSiralama2020" readonly></td>
+                        <td><input type="number" id="sayYerSiralama2020" readonly></td>
+                        <td><input type="number" id="eaHamSiralama2020" readonly></td>
+                        <td><input type="number" id="eaYerSiralama2020" readonly></td>
+                        <td><input type="number" id="sozHamSiralama2020" readonly></td>
+                        <td><input type="number" id="sozYerSiralama2020" readonly></td>
+                        <td><input type="number" id="dilHamSiralama2020" readonly></td>
+                        <td><input type="number" id="dilYerSiralama2020" readonly></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="hesapla">Hesapla</button>
+            <button id="temizle">Temizle</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
